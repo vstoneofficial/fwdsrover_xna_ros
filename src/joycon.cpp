@@ -7,10 +7,11 @@ class JoyCtrlRover
 {
 public:
   JoyCtrlRover();
+  void joyPub();
 
 private:
   void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
-  void joyPub();
+  
 
   ros::NodeHandle nh_;
 
@@ -43,7 +44,7 @@ JoyCtrlRover::JoyCtrlRover():
   vel_pub_ = nh_.advertise<geometry_msgs::Twist>("rover_twist", 1);
 
 
-  joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 1, &JoyCtrlMegarover::joyCallback, this);
+  joy_sub_ = nh_.subscribe<sensor_msgs::Joy>("joy", 1, &JoyCtrlRover::joyCallback, this);
 
 }
 
