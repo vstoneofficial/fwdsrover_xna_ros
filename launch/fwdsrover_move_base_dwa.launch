@@ -11,7 +11,7 @@
   <arg name="rviz"        default="on"     doc="on / off"/>
 
   <!-- オドメトリの配信ノード -->
-  <node pkg="fwdsrover_x40a_ros" type="pub_odom" name="pub_odom" />
+  <node pkg="fwdsrover_xna_ros" type="pub_odom" name="pub_odom" />
 
 
   <!-- URG-04LX-UG01の場合 -->
@@ -85,7 +85,7 @@
   
  
   <!-- mapサーバー -->
-  <arg name="map_file" default="$(find fwdsrover_x40a_ros)/map/gmap.yaml"/>　<!--マップファイルのパスの指定 -->
+  <arg name="map_file" default="$(find fwdsrover_xna_ros)/map/gmap.yaml"/>　<!--マップファイルのパスの指定 -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
  
   <!-- 
