@@ -8,7 +8,14 @@ rosserialを使ってROSと4WDSローバーを接続してから使用してく�
 
 <launch>
   <!-- マウスによる制御ノード -->
+  <arg name="holonomic" default="false"/>
+
   <node pkg="mouse_teleop" type="mouse_teleop.py" name="mouse_teleop">
-    <remap from="/mouse_vel" to="/rover_twist" />
+    <rosparam file="$(find fwdsrover_xna_ros)/configuration_files/mouse_teleop.yaml" command="load"/>
+    <param name="holonomic" value="$(arg holonomic)"/>
+
   </node>
+  
+  <node pkg="fwdsrover_xna_ros" type="mouse_receiver" name="mouse_receiver" />
+
 </launch>

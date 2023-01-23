@@ -142,6 +142,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(fwds3_pub_odom src/pub_odom.cpp)
 add_executable(fwds3_joycon   src/joycon.cpp)
+add_executable(fwds3_mouse   src/mouse_receiver.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -160,6 +161,9 @@ target_link_libraries(fwds3_pub_odom
 target_link_libraries(fwds3_joycon 
   ${catkin_LIBRARIES}
 )
+target_link_libraries(fwds3_mouse 
+  ${catkin_LIBRARIES}
+)
 
 set_target_properties(fwds3_pub_odom
                       PROPERTIES OUTPUT_NAME pub_odom
@@ -167,6 +171,9 @@ set_target_properties(fwds3_pub_odom
 
 set_target_properties(fwds3_joycon
                       PROPERTIES OUTPUT_NAME joycon
+                      PREFIX "")
+set_target_properties(fwds3_mouse
+                      PROPERTIES OUTPUT_NAME mouse_receiver
                       PREFIX "")
 
 #############
