@@ -1,7 +1,8 @@
 # costmap common params for MEGAROVER
 
 # ロボットの大きさに関するパラメータ
-footprint: [[0.2, -0.2], [0.2, 0.2], [-0.2, 0.2], [-0.2, -0.2]]
+footprint: [[0.2, -0.2], [0.2, 0.2], [-0.2, 0.2], [-0.2, -0.2]] # X40A
+#footprint: [[0.26, -0.26], [0.26, 0.26], [-0.26, 0.26], [-0.26, -0.26]] # X120A
 
 #obstacle_layerの設定
 obstacle_layer:
